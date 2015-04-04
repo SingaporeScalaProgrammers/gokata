@@ -17,13 +17,13 @@ for us this kata is not about writing a program that can play Go, but simply abo
 
 The board is a grid of horizontal and vertical lines. The lines of the board have intersections wherever they cross or touch each other. Each intersection is called a point. That includes the four corners, and the edges of the board.
 
-![A go Board](https://raw.githubusercontent.com/SingaporeScalaProgrammers/gokatatest/master/images/empty_board.png)
+![A go Board](https://raw.githubusercontent.com/SingaporeScalaProgrammers/gokata/master/images/empty_board.png)
 
 The example board has 25 points. The red circle shows one particular point. The red square in the corner shows another point.
 
 Two points connected by a line segment are said to be adjacent or next to one another. The triangles are adjacent. The crosses are not adjacent.
 
-![A go Board](https://raw.githubusercontent.com/SingaporeScalaProgrammers/gokatatest/master/images/adjecent_demo.png)
+![A go Board](https://raw.githubusercontent.com/SingaporeScalaProgrammers/gokata/master/images/adjecent_demo.png)
 
 ### The Stones
 
@@ -31,7 +31,7 @@ There are 2 players, black and white. The players place pieces (called "stones" 
 
 Players place stones on the points of the board. Here is a board with some stones placed on it.
 
-![A go Board](https://raw.githubusercontent.com/SingaporeScalaProgrammers/gokatatest/master/images/board_with_stones.png)
+![A go Board](https://raw.githubusercontent.com/SingaporeScalaProgrammers/gokata/master/images/board_with_stones.png)
 
 
 ### Capture
@@ -48,30 +48,30 @@ If there are no empty points next to a stone or a string of stones (the stone ha
 
 The white stone is almost surrounded. It is next to only one empty point, shown by the square. (Remember, only points connected by a line segment are next to one another. So the circles do not count as liberties, for example.)
 
-![A go Board](https://raw.githubusercontent.com/SingaporeScalaProgrammers/gokatatest/master/images/capture1.png)
+![A go Board](https://raw.githubusercontent.com/SingaporeScalaProgrammers/gokata/master/images/capture1.png)
 
 Black's move [1] surrounds the white stone completely.
 
-![A go Board](https://raw.githubusercontent.com/SingaporeScalaProgrammers/gokatatest/master/images/capture2.png)
+![A go Board](https://raw.githubusercontent.com/SingaporeScalaProgrammers/gokata/master/images/capture2.png)
 
 The white stone is captured and removed from the board
 
-![A go Board](https://raw.githubusercontent.com/SingaporeScalaProgrammers/gokatatest/master/images/capture3.png)
+![A go Board](https://raw.githubusercontent.com/SingaporeScalaProgrammers/gokata/master/images/capture3.png)
 
 #### Example 2
 
 
 The three white stones are connected along the lines of the board, and stand or fall together.
 
-![A go Board](https://raw.githubusercontent.com/SingaporeScalaProgrammers/gokatatest/master/images/capture4.png)
+![A go Board](https://raw.githubusercontent.com/SingaporeScalaProgrammers/gokata/master/images/capture4.png)
 
 Black's move [1] occupies their last liberty
 
-![A go Board](https://raw.githubusercontent.com/SingaporeScalaProgrammers/gokatatest/master/images/capture5.png)
+![A go Board](https://raw.githubusercontent.com/SingaporeScalaProgrammers/gokata/master/images/capture5.png)
 
 The 3 white stones are captured and removed from the board
 
-![A go Board](https://raw.githubusercontent.com/SingaporeScalaProgrammers/gokatatest/master/images/capture6.png)
+![A go Board](https://raw.githubusercontent.com/SingaporeScalaProgrammers/gokata/master/images/capture6.png)
 
 
 ### The Rules of Go
