@@ -8,20 +8,22 @@ Go (simplified Chinese: 围棋; traditional Chinese: 圍棋; pinyin: wéiqí, Ja
 
 There is significant strategy involved in the game, and the number of possible games is vast (10^761 compared, for example, to the 10^120 possible in chess), despite its relatively simple rules.
 
-Go is a very difficult game for computers to play well and professional players still beat the strongest AIs.
+Go is a very difficult game for computers to play well and professional players still beat the strongest AIs. Fortunately
+for us this kata is not about writing a program that can play Go, but simply about writing a program that can determine whether a move is legal according to the rules of Go
+, this should be  a lot easier!
 
 
 ### The Board
 
 The board is a grid of horizontal and vertical lines. The lines of the board have intersections wherever they cross or touch each other. Each intersection is called a point. That includes the four corners, and the edges of the board.
 
-![A go Board](https://raw.githubusercontent.com/russellwstanley/gokatatest/master/images/empty_board.png)
+![A go Board](https://raw.githubusercontent.com/SingaporeScalaProgrammers/gokatatest/master/images/empty_board.png)
 
 The example board has 25 points. The red circle shows one particular point. The red square in the corner shows another point.
 
 Two points connected by a line segment are said to be adjacent or next to one another. The triangles are adjacent. The crosses are not adjacent.
 
-![A go Board](https://raw.githubusercontent.com/russellwstanley/gokatatest/master/images/adjecent_demo.png)
+![A go Board](https://raw.githubusercontent.com/SingaporeScalaProgrammers/gokatatest/master/images/adjecent_demo.png)
 
 ### The Stones
 
@@ -29,7 +31,7 @@ There are 2 players, black and white. The players place pieces (called "stones" 
 
 Players place stones on the points of the board. Here is a board with some stones placed on it.
 
-![A go Board](https://raw.githubusercontent.com/russellwstanley/gokatatest/master/images/board_with_stones.png)
+![A go Board](https://raw.githubusercontent.com/SingaporeScalaProgrammers/gokatatest/master/images/board_with_stones.png)
 
 
 ### Capture
@@ -46,30 +48,30 @@ If there are no empty points next to a stone or a string of stones (the stone ha
 
 The white stone is almost surrounded. It is next to only one empty point, shown by the square. (Remember, only points connected by a line segment are next to one another. So the circles do not count as liberties, for example.)
 
-![A go Board](https://raw.githubusercontent.com/russellwstanley/gokatatest/master/images/capture1.png)
+![A go Board](https://raw.githubusercontent.com/SingaporeScalaProgrammers/gokatatest/master/images/capture1.png)
 
 Black's move [1] surrounds the white stone completely.
 
-![A go Board](https://raw.githubusercontent.com/russellwstanley/gokatatest/master/images/capture2.png)
+![A go Board](https://raw.githubusercontent.com/SingaporeScalaProgrammers/gokatatest/master/images/capture2.png)
 
 The white stone is captured and removed from the board
 
-![A go Board](https://raw.githubusercontent.com/russellwstanley/gokatatest/master/images/capture3.png)
+![A go Board](https://raw.githubusercontent.com/SingaporeScalaProgrammers/gokatatest/master/images/capture3.png)
 
 #### Example 2
 
 
 The three white stones are connected along the lines of the board, and stand or fall together.
 
-![A go Board](https://raw.githubusercontent.com/russellwstanley/gokatatest/master/images/capture4.png)
+![A go Board](https://raw.githubusercontent.com/SingaporeScalaProgrammers/gokatatest/master/images/capture4.png)
 
 Black's move [1] occupies their last liberty
 
-![A go Board](https://raw.githubusercontent.com/russellwstanley/gokatatest/master/images/capture5.png)
+![A go Board](https://raw.githubusercontent.com/SingaporeScalaProgrammers/gokatatest/master/images/capture5.png)
 
 The 3 white stones are captured and removed from the board
 
-![A go Board](https://raw.githubusercontent.com/russellwstanley/gokatatest/master/images/capture6.png)
+![A go Board](https://raw.githubusercontent.com/SingaporeScalaProgrammers/gokatatest/master/images/capture6.png)
 
 
 ### The Rules of Go
@@ -77,11 +79,47 @@ The 3 white stones are captured and removed from the board
 1. The board is empty at the onset of the game.
 2. Black places the first stone, after which White and Black alternate.
 3. Stones cannot be placed on occupied points.
-4. Stones cannot be placed where they would be immediately captured
+4. No self-capture. Stones cannot be placed where they would be immediately captured
 5. If placing a stone causes an opponent's stone to be captured, the opponents stones are removed from the board before the liberties of your stone(s) are calculated
 6. You cannot place a stone to put the game back in the same position as it was on your last turn (this prevents infinite loops in play)
 
 ### The Kata
 
 Write a program that, given a board state and a move will determine whether the move is a legal Go move, according to the rules 1-6.
+
+For added bonus points:
+
+Output the board state before and after the move in some sort of user-friendly way. Perhaps an ascii representation.
+
+
+## Building the project.
+
+The easiest way to build and run the tests is through SBT. You will need to install SBT if you want to build the project this way.
+
+The project follows the standard sbt layout so sources in src/main/scala will be automatically compiled. You can run the code with
+
+    sbt run
+
+There is a placeholder application class that just prints out a hello method
+
+You can run all the tests with:
+
+    sbt test
+
+This skeleton project has just 1 pending test.
+
+
+## Importing you your IDE
+
+### IntelliJ
+
+You can import SBT projects directly into IntelliJ from ```File->Import Project```. You will need the Scala and SBT plugin installed.
+IntelliJ should prompt you if you don't already have these.
+
+### Eclipse
+
+I believe that you can import sbt projects directly into eclipse...
+
+TODO If someone is an eclipse user and knows how to do this please add details...
+
 
