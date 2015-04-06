@@ -118,8 +118,19 @@ IntelliJ should prompt you if you don't already have these.
 
 ### Eclipse
 
-I believe that you can import sbt projects directly into eclipse...
+Execute `sbt` in root folder to generate `project` folder, then exit `sbt`:
 
-TODO If someone is an eclipse user and knows how to do this please add details...
+    cd gokata
+    sbt
+    > exit
+    
+Add [sbteclipse](https://github.com/typesafehub/sbteclipse) plugin by creating new file `plugins.sbt` in `project` folder. Then add this line to the new file and save it:
 
+    addSbtPlugin("com.typesafe.sbteclipse" % "sbteclipse-plugin" % "2.5.0")
+    
+Generate eclipse project:
 
+    sbt
+    > eclipse
+    
+Now, you can import the project directly into Eclipse from ```File -> Import...```, choose `General -> Existing Project into Workspace`. You need `Scala IDE 4.0.x` plugin installed.
